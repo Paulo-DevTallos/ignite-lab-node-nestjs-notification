@@ -103,3 +103,7 @@ Your database is now in sync with your schema.
 
 ✔ Generated Prisma Client (4.7.1 | library) to .\node_modules\@prisma\client in 118ms
 ```
+
+```bash
+$ npx prisma studio # creates a ui becoming possible database visualization
+```
