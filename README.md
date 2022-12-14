@@ -76,11 +76,30 @@ Nest is [MIT licensed](LICENSE).
 
 ```bash
 # install prisma as dev dependence
-$ npm install prisma -D 
+$ npm install prisma -D
 
 # install prisma client
 $ npm install @prisma/client
 
 # creating init with SQLite
 $ npx init --datasource-provide SQLite
+```
+
+## Create prisma migrate to generate database
+
+```bash
+# create a database with prisma command for migration
+$ npx prisma migrate dev
+
+# name the migrate to create a database
+$ ? Enter a name for the new migration: >> <migration's name>
+
+The following migration(s) have been created and applied from new schema changes:
+migrations/
+  └─ 20221214173323_create_notifications/
+    └─ migration.sql
+
+Your database is now in sync with your schema.
+
+✔ Generated Prisma Client (4.7.1 | library) to .\node_modules\@prisma\client in 118ms
 ```
