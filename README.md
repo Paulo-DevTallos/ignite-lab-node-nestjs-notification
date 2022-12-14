@@ -71,3 +71,16 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Run prisma ORM - using SQLite
+
+```bash
+# install prisma as dev dependence
+$ npm install prisma -D 
+
+# install prisma client
+$ npm install @prisma/client
+
+# creating init with SQLite
+$ npx init --datasource-provide SQLite
+```
