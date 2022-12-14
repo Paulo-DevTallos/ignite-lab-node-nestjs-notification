@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CreateNotificationDto } from './dto/createNotification-dto';
 import { PrismaService } from './prisma.service';
 //import { randomUUID } from 'node:crypto';
 
@@ -6,7 +7,7 @@ import { PrismaService } from './prisma.service';
 export class NotificationsService {
   constructor(private readonly prismaModel: PrismaService) {}
 
-  async create(data) {
+  async create(data: CreateNotificationDto) {
     const newNotification = await this.prismaModel.notification.create({
       data,
     });
@@ -21,7 +22,7 @@ export class NotificationsService {
 }
 
 /*
-outra abordagem
+another approach
 
 create(data: CreateNotificationDto) {
 	const { recipientId, content, category } = data
