@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateNotificationDto } from './dto/createNotification-dto';
-import { PrismaService } from './prisma.service';
+import { CreateNotificationDto } from './infra/dto/createNotification-dto';
+import { PrismaService } from './infra/prisma.service';
 //import { randomUUID } from 'node:crypto';
 
 @Injectable()

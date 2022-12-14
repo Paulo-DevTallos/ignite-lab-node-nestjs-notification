@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
-import { CreateNotificationDto } from './dto/createNotification-dto';
+import { CreateNotificationDto } from './infra/dto/createNotification-dto';
 import { NotificationsService } from './notifications.service';
 
 @Controller('notifications')
