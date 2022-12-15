@@ -1,3 +1,4 @@
+import { randomUUID } from 'crypto';
 import { Replace } from 'src/helpers/replace';
 import { Content } from './content';
 
@@ -10,14 +11,20 @@ export interface NotificationsProps {
 }
 
 export class Notifications {
+	private _id: string;
 	private props: NotificationsProps;
 
 	//utilizando helper para tratamento do createdAt
 	constructor(props: Replace<NotificationsProps, { createdAt?: Date }>) {
+		this._id = randomUUID();
 		this.props = {
 			...props,
 			createdAt: props.createdAt ?? new Date(), // if ?? else
 		};
+	}
+
+	public get id() {
+		return this._id;
 	}
 
 	// setter atualiza algo | getter busca algo
