@@ -1,3 +1,4 @@
+import { Replace } from 'src/helpers/replace';
 import { Content } from './content';
 
 export interface NotificationsProps {
@@ -11,8 +12,12 @@ export interface NotificationsProps {
 export class Notifications {
 	private props: NotificationsProps;
 
-	constructor(props: NotificationsProps) {
-		this.props = props;
+	//utilizando helper para tratamento do createdAt
+	constructor(props: Replace<NotificationsProps, { createdAt?: Date }>) {
+		this.props = {
+			...props,
+			createdAt: props.createdAt ?? new Date(), // if ?? else
+		};
 	}
 
 	// setter atualiza algo | getter busca algo
