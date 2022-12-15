@@ -1,14 +1,14 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { NotificationsModule } from './notifications.module';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(NotificationsModule);
-  app.useGlobalPipes(
-    new ValidationPipe({
-      transform: true,
-    }),
-  );
-  await app.listen(3008);
+	const app = await NestFactory.create(AppModule);
+	app.useGlobalPipes(
+		new ValidationPipe({
+			transform: true,
+		}),
+	);
+	await app.listen(3008);
 }
 bootstrap();
