@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
-import { PrismaService } from '../database/prisma/prisma.service';
-import { NotificationsController } from './notifications.controller';
-import { NotificationsService } from './notifications.service';
+import { SendNotification } from 'src/app/use-cases/send-notification';
+import { DataBaseModule } from '../database/database.module';
+import { NotificationsController } from './controllers/notifications.controller';
+
 @Module({
-	imports: [],
+	imports: [DataBaseModule],
 	controllers: [NotificationsController],
-	providers: [PrismaService, NotificationsService],
+	providers: [SendNotification],
 })
 export class HttpModule {}
